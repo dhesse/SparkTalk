@@ -36,7 +36,7 @@ Spark helps analyzing big data sets
 
 - from **heterogeneous** data sources,
 - **in memory**,
-- in *Java*, *Scala*, *Python*, and *R*
+- in *Java*, *Scala*, <font color="red">*Python*</font>, and *R*
 - with many back-ends and extensions.
 
 ![Spark Modules](img/ecosystem.png)
@@ -45,15 +45,22 @@ Spark helps analyzing big data sets
 
 ## Let's use it to count words!
 
-[Live Demo](http://localhost:8889/notebooks/WordCount.ipynb)
+[Live Demo](http://localhost:8888/notebooks/WordCount.ipynb)
 
 ---
 
 ## SparkContext and RDD
 ## An Inside Look
 
-[Live Demo](http://localhost:8889/notebooks/A%20Nerdy%20Look%20at%20SC%20and%20RDD.ipynb)
+[Live Demo](http://localhost:8888/notebooks/A%20Nerdy%20Look%20at%20SC%20and%20RDD.ipynb)
 
+
+---
+
+## Monitoring
+
+Spark makes it very easy to [monitor](http://172.30.30.129:4040) your
+cluster.
 
 ---
 
@@ -73,9 +80,11 @@ All easy(ish) to use.
 
 # MLLIB
 
-[Live Demo](http://localhost:8889/notebooks/MLLIB.ipynb)
+[Live Demo](http://localhost:8888/notebooks/MLLIB.ipynb)
 
 In which we predict survival of the **Titanic** disaster.
+
+Our **data** looks like this:
 
 <pre>
 PassengerId; Survived; Pclass; Name; Sex; Age; SibSp; Parch; Ticket; Fare; Cabin; Embarked
@@ -84,6 +93,8 @@ PassengerId; Survived; Pclass; Name; Sex; Age; SibSp; Parch; Ticket; Fare; Cabin
 3; 1; 3; Heikkinen, Miss. Laina; female; 26; 0; 0; STON/O2. 3101282; 7.925; ; S
 4; 1; 1; Futrelle, Mrs. Jacques Heath (Lily May Peel); female; 35; 1; 0; 113803; 53.1; C123; S
 </pre>
+
+Now use *logistic regression* to predict if a person survives. 
 
 ---
 
@@ -119,3 +130,110 @@ exist, e.g.
 
 ---
 
+## Digression: Why I like MongoDB
+
+If you write a lot of Python Code, MongoDB is a *great* way to store
+data.
+
+- MonogDB is lightning fast
+- MongoDB is easy to set up and use
+- MongoDB is tried and trusted
+- It plays nice with Python
+
+---
+
+## Twitter Data
+
+Our workflow:
+
+![Twitter to MongoDB](img/twitter-mongo-workflow.png)
+
+
+---
+
+## Most Wanted
+
+A twitter user as provided by the twitter API looks like this:
+
+    user { name: "Dirk Hesse",
+           screen_name: "NotDirkHesse",
+           geo_enabled: ...,
+           followers_count: 42 }
+
+We want to search our records for the user with the most followers...
+
+---
+
+## Spark Streaming
+
+From [spark.apache.org](http://spark.apache.org/)
+
+> Spark Streaming makes it easy to build scalable fault-tolerant
+> streaming applications.
+
+Which is *nice* but the power lies within the fact that it's
+
+![Spark Logo](img/spark-logo.png)
+
+---
+
+## Spark Streaming Example
+
+We collect some twitter data and select some *strange* features. From
+those we grow a **decision tree** to **predict** the *language* .
+
+    { text: "#WhoahDude, how cool is #ApacheSpark?!!!",
+      lang: "en",
+      entities: { hashtags: [{text: "WoahDude", ... }
+                             {text: "ApackeSpark", ...}]
+                }, ...
+    }
+
+We then use Spark Streaming to **tag**  incoming Tweets with the
+*language* **predicted** by our **tree**.
+
+---
+
+## Executive Workflow
+
+![Second Workflow](img/twitter-stream-workflow.png)
+
+[Demo](http://localhost:8888/notebooks/Streaming.ipynb)
+| [Results](http://localhost:5601/#/discover?_g=%28%29&_a=%28columns:!%28text,predicted_language,lang%29,index:twitter-predict,interval:auto,query:%27%27,sort:!%28created_at,desc%29%29)
+
+---
+
+## Spark and Unit Testing
+
+- You should unit test your code.
+- No, really, you **should**!
+- Spark and Python make this very easy.
+
+[Demo](http://localhost:8888/notebooks/Unit%20Testing.ipynb)
+
+---
+
+## Deploying on a cluster
+
+Currently you have **three main options**
+
+- **spark-ec2** *included* in the Spark distribution
+  - Script that lets you set cluster details from the command line
+- **Amazon EMR**
+  - Set up via amazon Web console
+- **Hack your own**
+  - *Good luck!*
+
+In the near future: **IBM Bluemix**
+
+---
+
+# Questions?!
+
+---
+
+# Thank you!
+## PS: We're hiring!
+
+Drop me an email at [dirk.hesse@intelcom.no](mailto:dirk.hesse@intelcom.no "Send me a
+mail").

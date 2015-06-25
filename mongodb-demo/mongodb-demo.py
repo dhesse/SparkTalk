@@ -18,7 +18,7 @@ def formatFollowerRecord(record):
 
 if __name__ == "__main__":
     sc = SparkContext()
-    config ={"mongo.input.uri": "mongodb://localhost:27017/twitter.no"}
+    config ={"mongo.input.uri": "mongodb://localhost:27017/twitter.sample"}
     inputFormatClassName = "com.mongodb.hadoop.MongoInputFormat"
     keyClassName = "org.apache.hadoop.io.Text"
     valueClassName = "org.apache.hadoop.io.MapWritable"
@@ -27,11 +27,11 @@ if __name__ == "__main__":
                             keyClassName,
                             valueClassName,
                             None, None, config)
-    mostFollowers = RawRDD\
-        .map(lambda x: (x[1]['user']['name'],
-                        x[1]['user']['followers_count']))\
+    mostFollowers = RawRDD.values()\
+        .map(lambda x: (x['user']['name'],
+                        x['user']['followers_count']))\
         .foldByKey(0, max)\
-        .sortBy(lambda x: x[1], ascending=False)\
+        .sortBy(lambda x: -x[1])\
         .take(20)
     
     with open("most_followed.txt", "w") as of:
