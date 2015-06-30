@@ -21,7 +21,7 @@ mail") | [@NotDirkHesse](https://twitter.com/NotDirkHesse "I tweet sporadically"
 
 ---
 
-![Spark Logo](img/spark-logo.png)
+![Spark Logo](https://raw.githubusercontent.com/dhesse/SparkTalk/master/img/spark-logo.png)
 
 From [spark.apache.org](http://spark.apache.org/)
 
@@ -39,20 +39,20 @@ Spark helps analyzing big data sets
 - in *Java*, *Scala*, <font color="red">*Python*</font>, and *R*
 - with many back-ends and extensions.
 
-![Spark Modules](img/ecosystem.png)
+![Spark Modules](https://raw.githubusercontent.com/dhesse/SparkTalk/master/img/ecosystem.png)
 
 ---
 
 ## Let's use it to count words!
 
-[Live Demo](http://localhost:8888/notebooks/WordCount.ipynb)
+[Live Demo](https://github.com/dhesse/SparkTalk/blob/master/nbhome/WordCount.ipynb)
 
 ---
 
 ## SparkContext and RDD
 ## An Inside Look
 
-[Live Demo](http://localhost:8888/notebooks/A%20Nerdy%20Look%20at%20SC%20and%20RDD.ipynb)
+[Live Demo](https://github.com/dhesse/SparkTalk/blob/master/nbhome/A%20Nerdy%20Look%20at%20SC%20and%20RDD.ipynb)
 
 
 ---
@@ -80,7 +80,7 @@ All easy(ish) to use.
 
 # MLLIB
 
-[Live Demo](http://localhost:8888/notebooks/MLLIB.ipynb)
+[Live Demo](https://github.com/dhesse/SparkTalk/blob/master/nbhome/MLLIB.ipynb)
 
 In which we predict survival of the **Titanic** disaster.
 
@@ -146,7 +146,7 @@ data.
 
 Our workflow:
 
-![Twitter to MongoDB](img/twitter-mongo-workflow.png)
+![Twitter to MongoDB](https://raw.githubusercontent.com/dhesse/SparkTalk/master/img/twitter-mongo-workflow.png)
 
 
 ---
@@ -173,7 +173,7 @@ From [spark.apache.org](http://spark.apache.org/)
 
 Which is *nice* but the power lies within the fact that it's
 
-![Spark Logo](img/spark-logo.png)
+![Spark Logo](https://raw.githubusercontent.com/dhesse/SparkTalk/master/img/spark-logo.png)
 
 ---
 
@@ -196,10 +196,9 @@ We then use Spark Streaming to **tag**  incoming Tweets with the
 
 ## Executive Workflow
 
-![Second Workflow](img/twitter-stream-workflow.png)
+![Second Workflow](https://raw.githubusercontent.com/dhesse/SparkTalk/master/img/twitter-stream-workflow.png)
 
-[Demo](http://localhost:8888/notebooks/Streaming.ipynb)
-| [Results](http://localhost:5601/#/discover?_g=%28%29&_a=%28columns:!%28text,predicted_language,lang%29,index:twitter-predict,interval:auto,query:%27%27,sort:!%28created_at,desc%29%29)
+[Demo](https://github.com/dhesse/SparkTalk/blob/master/nbhome/Streaming.ipynb)
 
 ---
 
@@ -209,7 +208,7 @@ We then use Spark Streaming to **tag**  incoming Tweets with the
 - No, really, you **should**!
 - Spark and Python make this very easy.
 
-[Demo](http://localhost:8888/notebooks/Unit%20Testing.ipynb)
+[Demo](https://github.com/dhesse/SparkTalk/blob/master/nbhome/Unit%20Testing.ipynb)
 
 ---
 
