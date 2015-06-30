@@ -18,7 +18,7 @@ def formatFollowerRecord(record):
 
 if __name__ == "__main__":
     sc = SparkContext()
-    config ={"mongo.input.uri": "mongodb://localhost:27017/twitter.sample"}
+    config ={"mongo.input.uri": "mongodb://localhost:27017/twitter.no"}
     inputFormatClassName = "com.mongodb.hadoop.MongoInputFormat"
     keyClassName = "org.apache.hadoop.io.Text"
     valueClassName = "org.apache.hadoop.io.MapWritable"
