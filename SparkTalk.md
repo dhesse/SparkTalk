@@ -59,7 +59,8 @@ Spark helps analyzing big data sets
 
 ## Monitoring
 
-Spark makes it very easy to [monitor](http://172.30.30.129:4040) your
+Spark makes it very easy to
+[monitor](https://spark.apache.org/docs/latest/monitoring.html) your
 cluster.
 
 ---
