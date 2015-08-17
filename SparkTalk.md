@@ -1,6 +1,8 @@
 # An Introduction to Apache Spark
 
-Dirk Hesse
+Dirk Hesse 
+
+Data Scientist / Intelligent Communication AS
 
 [dirk.hesse@intelcom.no](mailto:dirk.hesse@intelcom.no "Send me a
 mail") | [@NotDirkHesse](https://twitter.com/NotDirkHesse "I tweet sporadically")
